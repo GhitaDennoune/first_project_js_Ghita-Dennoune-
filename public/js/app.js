@@ -107,4 +107,14 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
                 console.log("ressayez");
             }
         }
+     // db ndouzo l email li 3tini 
+        let email = prompt("Entrez votre email :");
+        let trimemail = email.trim().toLowerCase();
+        if (trimemail.includes(" ") && trimemail.length < 10 && email.split("@").length !== 2) {
+            prompt("ressayez");
+            console.log("email invalidé a cause de space ou mois de 10 carctere ou @ ");
+        }
+    else {
+        console.log("email validé");
     }
+}
