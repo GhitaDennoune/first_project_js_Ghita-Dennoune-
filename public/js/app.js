@@ -138,4 +138,14 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
     } else {
         console.log("mot de passe validé");
     }
-}
+
+// db ndouzo l confirmation mot de passe li 3tini 
+    let password_confirmed = prompt("Confirmer votre mot de passe :")
+    let trimpassword_confirmed = password_confirmed.trim()
+    if (trimpassword !== trimpassword_confirmed) {
+        console.log("mot de passe non confirmé");
+    } else {
+        console.log("mot de passe confirmé");
+    }
+
+    }
