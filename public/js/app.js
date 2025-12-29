@@ -177,6 +177,17 @@ console.log(Databaseusers);
     } else {
         console.log("email validé");
     }
+       let password = prompt("Entrer votre mot de passe :");
+         let trimpassword = password.trim();
+            let user = Databaseusers.find(user => user.email === trimemail);
+            if (user && user.password === trimpassword) {
+                console.log("connexion réussie");
+                    alert("bienvenue dans votre compte bancaire");
+            } else {
+                alert("ressayez");
+                console.log("mot de passe incorrect");
+            }
+
     // ila khtare changer le mode passe 
 } else if (choisire === "changer mot de passe") {
     let email = prompt("Entrer votre email pour changer le mot de passe :")
