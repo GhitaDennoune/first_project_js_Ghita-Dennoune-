@@ -148,4 +148,14 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
         console.log("mot de passe confirmé");
     }
 
+
     }
+    Databaseusers.push({
+    Name: trimn,
+    email: trimemail,
+    age: trimage,
+    password: trimpassword,
+})
+console.log(Databaseusers);
+
+
