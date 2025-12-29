@@ -81,21 +81,20 @@
 
 // database lan5abiw fih info
 let Databaseusers = []
-// db n3tiw l user y5tre chno bgha ydire w la khtar exit nbkaw nswlouh 
 let choisire;
 
 
 
-
+// db n3tiw l user y5tre chno bgha ydire w la khtar exit nbkaw nswlouh 
   while(true){
     choisire = prompt("choisire entre inscrire , connecter , changer mot de passe ou exit :").toLowerCase()
     if (choisire === "exit") {
         break;
     }
-    // db nbdaw b nameli3tina
+   
 
    else if (choisire === "inscrire") {
-
+ // db nbdaw b nameli3tina
         let Name = prompt("Entrer votre Nom complet :")
         let trimn = Name.trim()
 
@@ -192,15 +191,15 @@ console.log(Databaseusers);
 } else if (choisire === "changer mot de passe") {
     let email = prompt("Entrer votre email pour changer le mot de passe :")
     let trimemail = email.trim().toLowerCase()
-
+    // db nchoufo wach email kine f databases 3andna
+    let emailExists = Databaseusers.some(user => user.email === trimemail);
+    if (!emailExists) {
+        console.log("email n'existe pas");
+    } else {
+        console.log("email validé");
+    }
+    let newpassword = prompt("Entrer votre nouveau mot de passe :")
     
- 
-    }}
+    }
 
-
-
-
-
-
-
-
+  }
