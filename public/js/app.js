@@ -125,4 +125,17 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
     } else {
         console.log("age validé");
     }
+   // db ndouzo l mot de passe li 3tini 
+  
+
+
+    let password = prompt("Entrer votre mot de passe :")
+    let trimpassword = password.trim()
+    let specialChars = ["@", "#", "-", "+", "*", "/"];
+    let hasSpecialChar = specialChars.some(char => trimpassword.includes(char));
+    if (/\s/.test(trimpassword) || !hasSpecialChar || trimpassword.length < 7) {
+        console.log("mot de passe invalidé a cause de space ou pas de caractere special ou moins de 7 caractere");
+    } else {
+        console.log("mot de passe validé");
+    }
 }
