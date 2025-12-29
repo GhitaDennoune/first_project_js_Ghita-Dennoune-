@@ -50,7 +50,7 @@
 //         * If the user chooses to log in, here are the details they must enter:
 //             # Email:
 //             - Check if the email exists in our Database.
-            
+
 //             # Password:
 //             - Check if the entered password is associated with the previously entered email.
 
@@ -60,20 +60,51 @@
 //         * After the user logs in, display the amount they have in their bank (user's choice) and offer them services:
 //             # Logout:
 //             - If the user chooses this option, they are logged out and offered the option, as at the beginning, to sign up, log in, or change the password.
-            
+
 //             # Withdraw Money:
 //             - If the user chooses this option, they can withdraw an amount from their bank (not exceeding the available amount).
-            
+
 //             # Deposit Money:
 //             - If the user chooses this option, they can deposit the desired amount (not exceeding 1000 dirhams).
-            
+
 //             # Take a Loan:
 //             - If the user chooses this option, they can take a loan up to 20% of what they already have.
 //             - They receive an additional 20%, but lose 10% with each login until reaching the amount of their loan.
-            
+
 //             # Invest:
 //             - If the user chooses this option, they can invest any amount in the bank.
 //             - Upon the next login, they will receive 20% of their investment each time until reaching 120% (earning 20% on each investment).
-            
+
 //             # History:
 //             - Ability to view the entire transaction history.
+
+
+// database lan5abiw fih info
+let Databaseusers = []
+// db n3tiw l user y5tre chno bgha ydire w la khtar exit nbkaw nswlouh 
+let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,changer mot de passe , exit)")
+
+
+
+
+    //   ila ma5tarch exit w 5tare sincrire 
+    // db nbdaw b nameli3tina
+    if (choisire == "inscrire") {
+        let Name = prompt("Entrer votre Nom complet :")
+        let trimn = Name.trim()
+
+        if (trimn.length < 5) {
+            console.log("le nom doit contenir au mois 5 caractére");
+        } else {
+            console.log("nom validé");
+        }
+
+        for (let character of trimn) {
+            if (/\d/.test(character) || character === '@' || character === '#' || character === '$' || character === '%' || character === '^' || character === '&' || character === '*' || character === '(' || character === ')' || character === '!' || character === '~' || character === '`' || character === '-' || character === '+' || character === '=' || character === '{' || character === '}' || character === '[' || character === ']' || character === '|' || character === '\\' || character === ':' || character === ';' || character === '"' || character === "'" || character === '<' || character === '>' || character === ',' || character === '.' || character === '?') {
+            }
+            else {
+               
+                console.log("ressayez");
+            }
+        }
+    }
