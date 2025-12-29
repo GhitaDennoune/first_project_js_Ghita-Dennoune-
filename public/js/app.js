@@ -82,14 +82,20 @@
 // database lan5abiw fih info
 let Databaseusers = []
 // db n3tiw l user y5tre chno bgha ydire w la khtar exit nbkaw nswlouh 
-let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,changer mot de passe , exit)")
+let choisire;
 
 
 
 
-    //   ila ma5tarch exit w 5tare sincrire 
+  while(true){
+    choisire = prompt("choisire entre inscrire , connecter , changer mot de passe ou exit :").toLowerCase()
+    if (choisire === "exit") {
+        break;
+    }
     // db nbdaw b nameli3tina
-    if (choisire == "inscrire") {
+
+   else if (choisire === "inscrire") {
+
         let Name = prompt("Entrer votre Nom complet :")
         let trimn = Name.trim()
 
@@ -147,22 +153,21 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
     } else {
         console.log("mot de passe confirmé");
     }
+Databaseusers.push({
+    Name: trimn,
+    email: trimemail,
+    age: triage,
+    password: trimpassword,
+    password_confirmed: trimpassword_confirmed
 
-        // ila khtare ydir connecter 
+})
+console.log(Databaseusers);
+      
 
-} else if (choisire == "connecter") {
-    let email = prompt("Entrer votre email :")
-    let trimemail = email.trim().toLowerCase()
-    // verifier db
-    let emailExists = Databaseusers.some(user => user.email === trimemail);
-    if (!emailExists) {
-        console.log("email n'existe pas");
-    } else {
-        console.log("email validé");
-    }
+
             // ila khtare ydir connecter 
 
-} else if (choisire == "connecter") {
+} else if (choisire === "connecter") {
     let email = prompt("Entrer votre email :")
     let trimemail = email.trim().toLowerCase()
     // verifier db
@@ -173,18 +178,13 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
         console.log("email validé");
     }
     // ila khtare changer le mode passe 
-} else if (choisire == "changer mot de passe") {
+} else if (choisire === "changer mot de passe") {
     let email = prompt("Entrer votre email pour changer le mot de passe :")
     let trimemail = email.trim().toLowerCase()
 
-    let emailExists = Databaseusers.some(user => user.email === trimemail);
-    if (!emailExists) {
-        console.log("email n'existe pas");
-    } else {
-        console.log("email validé");
-    }
+    
  
-    }
+    }}
 
 
 
@@ -193,9 +193,3 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
 
 
 
-Databaseusers.push({
-    Name: trimn,
-    email: trimemail,
-    age: trimage
-})
-console.log(Databaseusers);
