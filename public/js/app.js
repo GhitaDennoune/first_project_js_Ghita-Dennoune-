@@ -198,8 +198,9 @@ console.log(Databaseusers);
     } else {
         console.log("email validé");
     }
-    let newpassword = prompt("Entrer votre nouveau mot de passe :")
+ let newpassword = prompt("Entrer votre nouveau mot de passe :")
     
     }
+
 
   }
