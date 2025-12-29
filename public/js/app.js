@@ -117,4 +117,12 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
     else {
         console.log("email validé");
     }
+   // db ndouzo l age li 3tini 
+    let age = prompt("Entrer votre age :")
+    let triage = age.trim()
+    if ( isNaN(triage) || triage.length === 0 || triage.length >= 3) {
+        console.log("age invalidé a cause de space ou caractere non numerique ou 0 caractere ou plus de 2 caractere");
+    } else {
+        console.log("age validé");
+    }
 }
