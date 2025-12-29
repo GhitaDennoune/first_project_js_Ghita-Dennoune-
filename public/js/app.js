@@ -160,6 +160,29 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
     } else {
         console.log("email validé");
     }
+            // ila khtare ydir connecter 
+
+} else if (choisire == "connecter") {
+    let email = prompt("Entrer votre email :")
+    let trimemail = email.trim().toLowerCase()
+    // verifier db
+    let emailExists = Databaseusers.some(user => user.email === trimemail);
+    if (!emailExists) {
+        console.log("email n'existe pas");
+    } else {
+        console.log("email validé");
+    }
+    // ila khtare changer le mode passe 
+} else if (choisire == "changer mot de passe") {
+    let email = prompt("Entrer votre email pour changer le mot de passe :")
+    let trimemail = email.trim().toLowerCase()
+
+    let emailExists = Databaseusers.some(user => user.email === trimemail);
+    if (!emailExists) {
+        console.log("email n'existe pas");
+    } else {
+        console.log("email validé");
+    }
  
     }
 
