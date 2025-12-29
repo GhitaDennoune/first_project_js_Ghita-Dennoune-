@@ -138,7 +138,7 @@ let choisire;
     let trimpassword = password.trim()
     let specialChars = ["@", "#", "-", "+", "*", "/"];
     let hasSpecialChar = specialChars.some(char => trimpassword.includes(char));
-    if (/\s/.test(trimpassword) || !hasSpecialChar || trimpassword.length < 7) {
+    if (trimpassword.includes(" ") || !hasSpecialChar || trimpassword.length < 7) {
         console.log("mot de passe invalidé a cause de space ou pas de caractere special ou moins de 7 caractere");
     } else {
         console.log("mot de passe validé");
@@ -195,12 +195,38 @@ console.log(Databaseusers);
     let emailExists = Databaseusers.some(user => user.email === trimemail);
     if (!emailExists) {
         console.log("email n'existe pas");
+        alert("email  n'exist pas")
+           return;
     } else {
         console.log("email validé");
+        alert("email validé")
     }
+
  let newpassword = prompt("Entrer votre nouveau mot de passe :")
-    
+    let trimnewpassword = newpassword.trim()
+    let specialChars = ["@", "#", "-", "+", "*", "/"];
+    let hasSpecialramz = specialChars.some(ramz => trimnewpassword.includes(ramz));
+    if (trimnewpassword.includes(" ") || !hasSpecialramz || trimnewpassword.length < 7) {
+        console.log("mot de passe invalidé a cause de space ou pas de caractere special ou moins de 7 caractere");
+    } else {
+        console.log("mot de passe validé");
+        alert("mot de passe validé");
+    }
+    let user = Databaseusers.find(user => user.email === trimemail);
+    if (user) {
+        user.password = trimnewpassword;
+        console.log("mot de passe changé avec succès");
+        alert("mot de passe changé avec succès"); 
+    } else {
+        console.log("utilisateur non trouvé"); 
+        alert("utilisateur non trouvé");
     }
 
+    
+}
 
-  }
+} 
+
+
+
+  
