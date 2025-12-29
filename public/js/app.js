@@ -148,14 +148,31 @@ let choisire = prompt("bonjoure,que souhaitez vouz-faire? (inscrire, connecter ,
         console.log("mot de passe confirmé");
     }
 
+        // ila khtare ydir connecter 
 
+} else if (choisire == "connecter") {
+    let email = prompt("Entrer votre email :")
+    let trimemail = email.trim().toLowerCase()
+    // verifier db
+    let emailExists = Databaseusers.some(user => user.email === trimemail);
+    if (!emailExists) {
+        console.log("email n'existe pas");
+    } else {
+        console.log("email validé");
     }
-    Databaseusers.push({
+ 
+    }
+
+
+
+
+
+
+
+
+Databaseusers.push({
     Name: trimn,
     email: trimemail,
-    age: trimage,
-    password: trimpassword,
+    age: trimage
 })
 console.log(Databaseusers);
-
-
